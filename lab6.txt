@@ -2108,6 +2108,49 @@ View build details: docker-desktop://dashboard/build/default/default/a73rxz1ziho
 
 What's Next?
   View a summary of image vulnerabilities and recommendations → docker scout quickview
+-------------------------------------------------------------------------------------------------------------------
+//Wysyłania obrazu do repozytorium
+anastasiia@DESKTOP-3HKTLS0 MINGW64 ~/pawcho6/PAwChO_lab5 (main)
+$ docker push ghcr.io/nastkap/pawcho-spr:lab6
+The push refers to repository [ghcr.io/nastkap/pawcho-spr]
+ac398b27d60b: Preparing
+94bf025abb42: Preparing
+fa03547da701: Preparing
+cc4641692b32: Preparing
+b61095dfd9a0: Preparing
+9d911a45442d: Preparing
+09e880257db6: Preparing
+9fd54926bcae: Preparing
+175aa66db4cc: Preparing
+e6380a7057a5: Preparing
+1db2242fc1fa: Preparing
+b09347a1aec6: Preparing
+bbde741e108b: Preparing
+52ec5a4316fa: Preparing
+9d911a45442d: Waiting
+09e880257db6: Waiting
+9fd54926bcae: Waiting
+175aa66db4cc: Waiting
+e6380a7057a5: Waiting
+1db2242fc1fa: Waiting
+b09347a1aec6: Waiting
+bbde741e108b: Waiting
+52ec5a4316fa: Waiting
+fa03547da701: Pushed
+cc4641692b32: Pushed
+9d911a45442d: Mounted from nastkap/lab6
+ac398b27d60b: Pushed
+09e880257db6: Mounted from nastkap/lab6
+b61095dfd9a0: Pushed
+175aa66db4cc: Mounted from nastkap/lab6
+9fd54926bcae: Mounted from nastkap/lab6
+e6380a7057a5: Mounted from nastkap/lab6
+1db2242fc1fa: Mounted from nastkap/lab6
+bbde741e108b: Mounted from nastkap/lab6
+b09347a1aec6: Mounted from nastkap/lab6
+52ec5a4316fa: Mounted from nastkap/lab6
+94bf025abb42: Pushed
+lab6: digest: sha256:7bdcd45a4723b83ae5b2a0e0e574dcf080d769789cd5345c8c477bafc14a0ac3 size: 3243
 
 -------------------------------------------------------------------------------------------------------------------
 //Pobieranie obrazu Docker:
