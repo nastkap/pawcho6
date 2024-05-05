@@ -2,16 +2,27 @@
 //Generowanie klucza SSH
 
 anastasiia@DESKTOP-3HKTLS0 MINGW64 ~
+
 $ ssh-keygen -t ed25519 -C "an.p.github@gmail.com"
+
 Generating public/private ed25519 key pair.
+
 Enter file in which to save the key (/c/Users/anastasiia/.ssh/id_ed25519): /c/Users/anastasiia/.ssh/gh_cli_w_ed25519
+
 Enter passphrase (empty for no passphrase):
+
 Enter same passphrase again:
+
 Your identification has been saved in /c/Users/anastasiia/.ssh/gh_cli_w_ed25519
+
 Your public key has been saved in /c/Users/anastasiia/.ssh/gh_cli_w_ed25519.pub
+
 The key fingerprint is:
+
 SHA256:o4qAfuJxvGiOBNF0khYfFjaNe74NDPWmg7TCsTJaNmY an.p.github@gmail.com
+
 The key's randomart image is:
+
 +--[ED25519 256]--+
 |  +oB+           |
 | oo*.oo          |
