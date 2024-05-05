@@ -35,8 +35,8 @@ RUN apk update && \
     apk add --no-cache openssh-client
 
 # Dodanie klucza SSH do kontenera
-COPY ssh_key /root/.ssh/id_rsa
-RUN chmod 600 /root/.ssh/id_rsa
+COPY gh_cli_w_ed25519 /root/.ssh/gh_cli_w_ed25519
+RUN chmod 600 /root/.ssh/gh_cli_w_ed25519
 
 # Pobranie repozytorium i zbudowanie obrazu Docker na podstawie jego zawartości
 RUN git clone git@github.com:nastkap/pawcho6.git /app
