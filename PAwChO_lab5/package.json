@@ -1,0 +1,18 @@
+{
+  "name": "docker-nodejs-app",
+  "version": "1.0.0",
+  "description": "Prosta aplikacja Node.js dla Docker",
+  "main": "kod.js",
+
+  
+  "scripts": {
+    "start": "node kod.js",
+    "build": "echo 'Budowanie aplikacji...'"
+  },
+  "author": "Twój autor",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.19.2",
+    "nodemon": "^3.1.0"
+  }
+}

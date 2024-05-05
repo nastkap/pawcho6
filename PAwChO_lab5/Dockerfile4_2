@@ -1,0 +1,29 @@
+# Etap pierwszy: budowa aplikacji Node.js
+FROM node:alpine AS builder
+
+ARG VERSION
+ENV APP_VER=production.${VERSION:-v1.0}
+
+WORKDIR /usr/app
+COPY ./package.json ./ 
+RUN npm install
+COPY ./kod.js ./
+
+
+# Etap drugi: serwer Nginx
+FROM nginx:latest
+
+ARG VERSION
+ENV APP_VER=production.${VERSION:-v1.0}
+
+COPY --from=builder /usr/app/ /usr/share/nginx/html/
+
+# Ustawienie pliku HTML aplikacji jako stronę domyślną
+RUN ln -sf /usr/share/nginx/html/kod.js /usr/share/nginx/html/index.html
+EXPOSE 80
+# Zdefiniowanie komendy startowej (uruchomienie serwera Nginx)
+CMD ["nginx", "-g", "daemon off;"]
+
+# Sprawdzanie poprawności działania aplikacji Node.js
+HEALTHCHECK --interval=10s --timeout=1s \
+  CMD curl -f http://localhost/ || exit 1S
