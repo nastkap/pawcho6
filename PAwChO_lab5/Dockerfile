@@ -31,13 +31,14 @@ HEALTHCHECK --interval=10s --timeout=1s \
   CMD curl -f http://localhost/ || exit 1
 
 # Dodatkowe polecenia do obsługi protokołu SSH i kluczy SSH
-RUN apk update && \
-    apk add --no-cache openssh-client
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends openssh-client && \
+    rm -rf /var/lib/apt/lists/*
 
 # Dodanie klucza SSH do kontenera
-COPY gh_cli_w_ed25519 /root/.ssh/gh_cli_w_ed25519
-RUN chmod 600 /root/.ssh/gh_cli_w_ed25519
+COPY gh_cli_w_ed25519 /root/.ssh
+RUN chmod 600 /root/.ssh
 
-# Pobranie repozytorium i zbudowanie obrazu Docker na podstawie jego zawartości
-RUN git clone git@github.com:nastkap/pawcho6.git /app
-RUN docker build -t pawcho6-gh/app
+# Pobranie repozytorium 
+RUN apt-get update && apt-get install -y git
+RUN git clone https://github.com/nastkap/pawcho6.git /app
